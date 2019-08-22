@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'shreelipi';
+  font-style: normal;
+  src: url('../fonts/SHREE0850.ttf');
+  unicode-range: U+0C80-OCFF;
+}
+@font-face {
+  font-family: 'shreelipi';
+  font-style: italic;
+  src: url('../fonts/SHREE0850-I.ttf');
+  unicode-range: U+0C80-OCFF;
+}
+@font-face {
+  font-family: 'shreelipi';
+  font-style: normal;
+  font-weight: bold;
+  src: url('../fonts/SHREE0850-B.ttf');
+  unicode-range: U+0C80-OCFF;
+}
+@font-face {
+  font-family: 'shreelipi';
+  font-style: italic;
+  font-weight: bold;
+  src: url('../fonts/SHREE0850-BI.ttf');
+  unicode-range: U+0C80-OCFF;
+}
