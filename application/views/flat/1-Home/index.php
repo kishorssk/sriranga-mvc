@@ -40,12 +40,12 @@
     <div class="col-md-4 mb-3"> 
       <div><i class="fa fa-cogs fa-3x text-center" id="rcorners2"></i></div><br />
       <h5>Digitisation</h5>
-      <p>Sriranga is a pioneer in the field of digital archiving of indic language material and artistic works,.</p>
+      <p>Sriranga is a pioneer in the field of digital archiving of indic language material and artistic works</p>
     </div>
     <div class="col-md-4 mb-3"> 
       <div><i class="fa fa-tablet fa-3x text-center" id="rcorners2"></i></div><br />
       <h5>Mobile Applications (Android)</h5>
-      <p>We have developed a mobile application called Tungalahari for Sringeri Math.</p>
+      <p>We have developed a mobile application called Tungalahari for Sringeri Math</p>
     </div>
     <div class="col-md-4 mb-3"> 
       <div><i class="fa fa-globe fa-3x text-center" id="rcorners2"></i></div><br />
@@ -55,12 +55,12 @@
     <div class="col-md-4 mb-3"> 
       <div><i class="fa fa-search fa-3x text-center" id="rcorners2"></i></div><br />
       <h5>Research in Indian languages</h5>
-      <p>Our main purpose of starting this company is doing a research in Indic computing.</p>
+      <p>Our main purpose of starting this company is doing a research in Indic computing</p>
     </div>
     <div class="col-md-4 mb-3"> 
       <div><i class="fa fa-volume-up fa-3x text-center" id="rcorners2"></i></div><br />
       <h5>Text to Speech</h5>
-      <p>Since September 2016, Sriranga has joined hands with Hear2Read,</p>
+      <p>Since September 2016, Sriranga has joined hands with Hear2Read</p>
     </div>
   </div>
 </div>
