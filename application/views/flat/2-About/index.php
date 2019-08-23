@@ -10,7 +10,7 @@
 
 			<p class="mb-3">We have a dedicated band of young people trained in-house who love to take on challenging jobs.</p>
 
-			<img src="<?=IMAGE_URL?>hear2read.png" alt="Hear2Read"  class="img-fluid mb-3">
+			<a href="https://www.youtube.com/channel/UCiauKk9ddHef65A0nRm4Vgw" target="_blank"><img src="<?=IMAGE_URL?>hear2read.png" alt="Hear2Read"  class="img-fluid mb-3">
 			<p class="mb-3">Since September 2016, Sriranga has joined hands with Hear2Read, an organization working towards bridging the digital divide for blind and low vision Indic language speakers.</p>
 		</div>
 	</div>
