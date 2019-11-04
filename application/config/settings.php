@@ -15,4 +15,12 @@ define('REQUIRE_RESET_PASSWORD', True);//if outbound mails can be sent from the 
 define('SERVICE_EMAIL', 'webadmin@uni-mysore.ac.in');
 define('SERVICE_NAME', 'University of Mysore');
 
+define('unitPrice', 1000);
+define('keyId', '');
+define('keySecret', '');
+
+define('dbServer','localhost');
+define('dbName', 'srirangadb');
+define('dbUser','root');
+define('dbPassword','');
 ?>
