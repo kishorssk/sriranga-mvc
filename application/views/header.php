@@ -37,6 +37,7 @@
     <!-- Favicon
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="icon" type="image/png" href="<?=PUBLIC_URL?>images/favicon.ico">
+    <script type="text/javascript">var base_url = "<?= BASE_URL?>";</script>
 </head>
 <body>
 
