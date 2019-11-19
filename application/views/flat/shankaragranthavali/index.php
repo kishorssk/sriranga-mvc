@@ -8,7 +8,13 @@
 <div class="container second-stage">
 	<div class="row">
 		<div class="col-md-3">
-			<img id="myImage" src="<?=BASE_URL?>public/images/mainc/coverpage1.jpg" class="img-fluid" alt="Sri Shankara Granthavali cover image" />
+			<div id="images">
+				<img data-original="<?=BASE_URL?>public/images/mainc/coverpage1.jpg" src="<?=BASE_URL?>public/images/mainc/coverpage1_thumb.jpg" class="img-fluid" alt="Sri Shankara Granthavali cover image" />&nbsp;&nbsp;&nbsp;
+				<img data-original="<?=BASE_URL?>public/images/mainc/coverpage2.jpg" src="<?=BASE_URL?>public/images/mainc/coverpage2_thumb.jpg" class="img-fluid" alt="Sri Shankara Granthavali cover image" /><br /><br />
+				<img data-original="<?=BASE_URL?>public/images/mainc/coverpage3.jpg" src="<?=BASE_URL?>public/images/mainc/coverpage3_thumb.jpg" class="img-fluid" alt="Sri Shankara Granthavali cover image" />&nbsp;&nbsp;&nbsp;
+				<img data-original="<?=BASE_URL?>public/images/mainc/coverpage4.jpg" src="<?=BASE_URL?>public/images/mainc/coverpage4_thumb.jpg" class="img-fluid" alt="Sri Shankara Granthavali cover image" />
+			</div>
+			<p class="pt-4">Click on the images to zoom in</p>	
 		</div>	
 		<div class="col-md-9">
 			<h3 class="text-center">Sri Shankara Granthavali</h3> 
@@ -153,7 +159,13 @@ function rotateImage()
  
 $(document).ready(function()
 {
-  setInterval (rotateImage, 2500);
+
+    if(document.getElementById('images')){
+        
+        var viewer = new Viewer(document.getElementById('images'), {url: 'data-original'});
+    }
+
+  //setInterval (rotateImage, 2500);
 
 });
 

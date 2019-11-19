@@ -29,7 +29,7 @@
 	<link rel="stylesheet" href="<?=PUBLIC_URL?>css/custom.css?v=1.1">
 
     <link rel="stylesheet" href="<?=PUBLIC_URL?>css/fonts.css?v=1.0">
-    
+    <link rel="stylesheet" href="<?=PUBLIC_URL?>css/viewer.css">    
     <!-- Fonts
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway:200,300,400|Roboto:300,400&amp;subset=latin-ext" rel="stylesheet">
