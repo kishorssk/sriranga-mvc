@@ -1,7 +1,7 @@
 <div class="container-fluid" style="margin: 100px 0px 0px 0px; padding-left:0px;padding-right:0px;">
 	<div class="row">
 		<div class="col-md-12" style="padding: 0px;">
-			<img src="<?=BASE_URL?>public/images/slide2.jpg" style="width: 100%;" alt="Sri Shankara Granthavali Advertisement" />
+			<img src="<?=BASE_URL?>public/images/slide5.jpg" style="width: 100%;" alt="Sri Shankara Granthavali Advertisement" />
 		</div>	
 	</div>	
 </div>

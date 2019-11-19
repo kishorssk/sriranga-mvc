@@ -8,7 +8,7 @@
       <img class="img-fluid" src="<?=IMAGE_URL?>slide1.jpg" alt="First slide">
     </div>
 	<div class="carousel-item">
-		<img class="img-fluid" src="<?=IMAGE_URL?>slide2.jpg" alt="Second slide">
+		<img class="img-fluid" src="<?=IMAGE_URL?>slide5.jpg" alt="Second slide">
 	</div>
 </div>
 <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
