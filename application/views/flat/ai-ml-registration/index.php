@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-md-12 mt-5">
 			<h1 class="text-center" style="font-weight: 100;">SRIRANGA&nbsp; AI&nbsp; ML&nbsp; CLUB</h1>
-			<p class="text-muted text-center">Register now for the technical session on most happening field of IT industry! on December 8th 2019</p>
+			<p class="text-muted text-center">Register now for the technical session on most happening field of IT industry! on December 8th 2019 in Mysore. Venue will be updated shortly</p>
 		</div>	
 	</div>	
 </div>
