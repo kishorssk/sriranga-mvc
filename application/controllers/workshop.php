@@ -33,6 +33,16 @@ class workshop extends Controller {
 		}			
 	}
 
+	public function listpersons(){
+		
+		$data = $this->model->getPersonsList();
+		
+		if(sizeof($data) > 0)
+			$this->view('workshop/personslist',$data);
+		else
+			$this->view('workshop/listempty',$data);
+	}
+
 }
 
 ?>

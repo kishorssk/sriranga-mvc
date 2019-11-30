@@ -72,6 +72,31 @@ class workshopModel extends Model {
 		return true;
 	}
 
+	public function getPersonsList(){
+
+		$dbConnection = $this->connect();
+
+		if($dbConnection == null){
+			return null;
+		}
+
+		$data = array();
+
+		$sql = "SELECT * FROM " . WORKSHOP_TABLE;
+
+		$result = $dbConnection->query($sql);
+
+		while($row = mysqli_fetch_assoc($result)){
+			
+			array_push($data,$row);
+		
+		}
+		
+		$this->closeDbConnection($dbConnection);
+
+		return $data;	
+	}
+
 	public function closeDbConnection($dbConnection){
 
 		if($dbConnection == null){
