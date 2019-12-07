@@ -64,6 +64,37 @@ class orders extends Controller {
 		$path = 'flat/payment';
 		$this->view($path,$data);
 	}
+
+	public function testmail(){
+		
+		$toEmail = "shiva@srirangadigital.com";
+		$toName = "Shivashankar";
+		$subject = 'Shankara Granthavali USB Stick';
+		$emailBody = 'Thanks for ordering Shankara Granthavali USB Stick';
+		
+	
+		$this->sendLetterToPostman($toEmail, $toName, $subject, $emailBody);
+	}
+
+	public function sendLetterToPostman ($toEmail, $toName, $subject, $emailBody) {
+
+		$mail = new PHPMailer();
+
+	    $mail->isSMTP();
+    	$mail->Host = 'smtp.gmail.com';
+    	$mail->Port = 587;
+    	$mail->SMTPSecure = 'tls';
+    	$mail->SMTPAuth = true;
+    	$mail->Username = SERVICE_EMAIL;
+    	$mail->Password = SERVICE_EMAIL_PASSWORD;
+    	$mail->setFrom(SERVICE_EMAIL, SERVICE_NAME);
+    	$mail->addAddress($toEmail, $toName);
+    	$mail->Subject = $subject;
+    	$mail->msgHTML($emailBody);
+
+        return ( $mail->send() ) ? 'true' : $mail->ErrorInfo;
+ 	}
+
 }
 
 ?>
