@@ -92,7 +92,7 @@ class orders extends Controller {
     	$mail->Subject = $subject;
     	$mail->msgHTML($emailBody);
 
-        return ( $mail->send() ) ? 'true' : $mail->ErrorInfo;
+        return ( $mail->send() ) ? true : $mail->ErrorInfo;
  	}
 
 }

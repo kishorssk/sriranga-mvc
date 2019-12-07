@@ -229,6 +229,15 @@ hr{
     border-radius: .25rem;
 }
 
+.tocentries{
+	font-family: 'Vanivilas';
+	font-size: 1.35em !important;
+	color: #E20000;
+}
+.tocentries span.engfont{
+	font-size: 1em;
+}
+
 @media (min-width: 576px) { 
 
 

@@ -24,3 +24,15 @@
   src: url('../fonts/SHREE0850-BI.ttf');
   unicode-range: U+0C80-OCFF;
 }
+@font-face {
+  font-family: 'Vanivilas';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Vanivilas'), url('../fonts/vanivilas/Adisila.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Vanivilas';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Vanivilas'), url('../fonts/vanivilas/AdisilaBold.ttf') format('truetype');
+}
