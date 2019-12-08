@@ -79,7 +79,12 @@ class ordersModel extends Model {
 			return null;
 		}
 
-		$sql = "select order_alias_id from orders where order_id = ".$_SESSION['orderId']." limit 1";
+		$dbConnection = $this->connect();
+		if($dbConnection == null){
+			return null;
+		}
+
+		$sql = "select username, user_mobile, user_email, order_quantity, order_price, user_address_1, user_address_2, user_city, user_pincode, user_state from orders where order_id = ".$_SESSION['orderId']." limit 1";
 
 		$result = $dbConnection->query($sql);
 
@@ -88,8 +93,25 @@ class ordersModel extends Model {
 		    return null;
 		}
 
-		return $result->fetch_assoc()['order_alias_id'];
+		return $result;
 
+	}
+
+	public function getOrderDetails($orderId){
+		if($orderId == null){
+			return null;
+		}
+
+		$dbConnection = $this->connect();
+		if($dbConnection == null){
+			return null;
+		}
+
+		$sql = "select username, user_mobile, user_email, order_quantity, order_price, user_address_1, user_address_2, user_city, user_pincode, user_state from orders where order_id = ".$_SESSION['orderId']." limit 1";
+
+		$result = $dbConnection->query($sql);
+		$this->closeDbConnection($dbConnection);
+		return $result->fetch_assoc();
 	}
 	public function closeDbConnection($dbConnection){
 		if($dbConnection == null){

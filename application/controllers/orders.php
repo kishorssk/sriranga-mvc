@@ -45,6 +45,7 @@ class orders extends Controller {
 				    "name"              => $_POST['name'],
 				    "email"             => $_POST['email'],
 				    "contact"           => $_POST['mobile'],
+				    "quantity"			=> $_POST['quantity'],
 				    "orderId"			=> $orderId,
 				    ],
 		    "notes"             => [
@@ -65,35 +66,35 @@ class orders extends Controller {
 		$this->view($path,$data);
 	}
 
-	public function testmail(){
+	// public function testmail(){
 		
-		$toEmail = "shiva@srirangadigital.com";
-		$toName = "Shivashankar";
-		$subject = 'Shankara Granthavali USB Stick';
-		$emailBody = 'Thanks for ordering Shankara Granthavali USB Stick';
+	// 	$toEmail = "shiva@srirangadigital.com";
+	// 	$toName = "Shivashankar";
+	// 	$subject = 'Shankara Granthavali USB Stick';
+	// 	$emailBody = 'Thanks for ordering Shankara Granthavali USB Stick';
 		
 	
-		$this->sendLetterToPostman($toEmail, $toName, $subject, $emailBody);
-	}
+	// 	$this->sendLetterToPostman($toEmail, $toName, $subject, $emailBody);
+	// }
 
-	public function sendLetterToPostman ($toEmail, $toName, $subject, $emailBody) {
+	// public function sendLetterToPostman ($toEmail, $toName, $subject, $emailBody) {
 
-		$mail = new PHPMailer();
+	// 	$mail = new PHPMailer();
 
-	    $mail->isSMTP();
-    	$mail->Host = 'smtp.gmail.com';
-    	$mail->Port = 587;
-    	$mail->SMTPSecure = 'tls';
-    	$mail->SMTPAuth = true;
-    	$mail->Username = SERVICE_EMAIL;
-    	$mail->Password = SERVICE_EMAIL_PASSWORD;
-    	$mail->setFrom(SERVICE_EMAIL, SERVICE_NAME);
-    	$mail->addAddress($toEmail, $toName);
-    	$mail->Subject = $subject;
-    	$mail->msgHTML($emailBody);
+	//     $mail->isSMTP();
+ //    	$mail->Host = 'smtp.gmail.com';
+ //    	$mail->Port = 587;
+ //    	$mail->SMTPSecure = 'tls';
+ //    	$mail->SMTPAuth = true;
+ //    	$mail->Username = SERVICE_EMAIL;
+ //    	$mail->Password = SERVICE_EMAIL_PASSWORD;
+ //    	$mail->setFrom(SERVICE_EMAIL, SERVICE_NAME);
+ //    	$mail->addAddress($toEmail, $toName);
+ //    	$mail->Subject = $subject;
+ //    	$mail->msgHTML($emailBody);
 
-        return ( $mail->send() ) ? true : $mail->ErrorInfo;
- 	}
+ //        return ( $mail->send() ) ? true : $mail->ErrorInfo;
+ // 	}
 
 }
 

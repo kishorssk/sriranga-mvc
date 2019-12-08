@@ -1,5 +1,61 @@
 <div class="container second-stage">
 	<div class="row">
+        <div class="col-sm-12 text-center">
+            <h4>Order Details:</h4>
+        </div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 text-center">
+            <?php $details = json_decode($data,true);?>
+            <div class="container">
+                <div class="row" style="margin-bottom: 5px;">
+                    <div class="col-sm-4">
+                        <label for="name">Name: </label>   
+                    </div>
+                    <div class="col-sm-8" style="text-align: left;">
+                        <label><?php echo $details['prefill']['name']; ?></label>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 5px;">
+                    <div class="col-sm-4">
+                        <label for="mobile"> Mobile no : </label>     
+                    </div>
+                    <div class="col-sm-8" style="text-align: left;">
+                        <label><?php echo $details['prefill']['contact']; ?></label>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 5px;">
+                    <div class="col-sm-4">
+                        <label for="email"> Email ID : </label>   
+                    </div>
+                    <div class="col-sm-8" style="text-align: left;">
+                        <label><?php echo $details['prefill']['email']; ?></label>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 5px;">
+                    <div class="col-sm-4">
+                        <label for="quantity"> Quantity :</label>     
+                    </div>
+                    <div class="col-sm-8" style="text-align: left;">
+                        <label><?php echo $details['prefill']['quantity']; ?></label>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 5px;">
+                    <div class="col-sm-4">
+                        <label for="address1"> Address : </label>  
+                    </div>
+                    <div class="col-sm-8" style="text-align: left;">
+                        <label><?php echo $details['notes']['address1']; ?></label>
+                        <br>
+                        <label><?php echo $details['notes']['address2']; ?></label>
+                        <br>
+                        <label><?php echo $details['notes']['city']; ?> - </label>
+                        <label><?php echo $details['notes']['pincode']; ?></label>
+                        <br>
+                        <label><?php echo $details['notes']['state']; ?></label>
+                    </div>
+                </div>
+            </div>
+        </div>
 		<div class="col-sm-12 text-center"> 
             <button id="rzp-button1">Continue to Pay</button>
         </div>

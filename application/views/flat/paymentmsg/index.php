@@ -6,11 +6,11 @@
 				<br>
 				<label>Your paymnet was successful and Your Order id is <b style="color: red;"><?=$data['orderId']?> </b></label>
 				<br>
-				<label>Plase make a note of order id for future reference.</label>
+				<label>Please make a note of order id for future reference.</label>
 			<?php }else{?>
 				<label>Sorry your payment was not successful.... Please Try again.</label>
 				<br>
-				<label>If amount is deducted then plase contact Sriranga Digital</label>
+				<label>If amount is deducted then please contact Sriranga Digital.</label>
 			<?php }?>
 		</div>
 	</div>

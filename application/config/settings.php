@@ -17,6 +17,7 @@ define('REQUIRE_RESET_PASSWORD', True);//if outbound mails can be sent from the 
 define('SERVICE_EMAIL', 'sdst.sriranga.digital@gmail.com');
 define('SERVICE_EMAIL_PASSWORD', 'sriranga@646203');
 define('SERVICE_NAME', 'Sriranga Team ' . ORG_NAME);
+define('CONTACT_EMAIL','');
 
 define('unitPrice', 1000);
 define('keyId', '');
