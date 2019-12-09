@@ -4,7 +4,7 @@
 			<h3 class="text-center">Shankara Granthavali &mdash; Product Overview</h3>
 			<ol>
 				<li>
-					<h6>About Page</h6>
+					<h6>About</h6>
 					<ul>
 						<li><i>Concluding Note</i>  &mdash; T.K. Balasubrahmanyam</li>
 						<li><i>An Appreciation</i>  &mdash; N. Srikantha Sastri</li>
@@ -14,17 +14,17 @@
 					</ul>
 				</li>
 				<li>
-					<h6>Volumes Page</h6>
+					<h6>Volumes</h6>
 					<ul>
 						<li>Browse by volumes</li>
 					</ul>
 				</li>
 				<li>
-					<h6>Works Page</h6>
+					<h6>Works</h6>
 					<ul><li>Browse by name of the work (For example, Aparokshanubhuti)</li></ul>
 				</li>
 				<li>
-					<h6>Search Page</h6>
+					<h6>Search</h6>
 					<ul>
 						<li>Search the extensive table of contents of the complete works</li>
 						<li>Full text search</li>
