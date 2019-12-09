@@ -201,5 +201,49 @@ class viewHelper extends View {
 		return $content[$bookID];
 	}
 
+	public function displayCurrency(){
+	
+		$client  = @$_SERVER['HTTP_CLIENT_IP'];
+		$forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
+		$remote  = $_SERVER['REMOTE_ADDR'];
+		$country  = "Unknown";
+	
+
+		if(filter_var($client, FILTER_VALIDATE_IP))
+			$ip = $client;
+
+		elseif(filter_var($forward, FILTER_VALIDATE_IP))
+			$ip = $forward;
+
+		else
+			$ip = $remote;
+
+		// To be removed in production
+		//$ip = '117.247.182.254'; // India
+		//$ip = '72.229.28.185'; // USA
+		//$ip = '116.58.205.53'; // Bangladesh
+
+
+		$xml = simplexml_load_file("http://www.geoplugin.net/xml.gp?ip=" . $ip);
+
+		if(!$xml) return False;
+
+		$code = $xml->geoplugin_countryCode;
+
+		if($code == 'IN') {
+			return 'INR';
+		}
+		else{
+			return 'USD';
+		}
+	}
+	
+	public function displayUnitPrice($unitPrice){
+		
+		if($unitPrice == 'INR')
+			return INR_PRICE;
+		
+		return USD_PRICE;	
+	}
 }
 ?>

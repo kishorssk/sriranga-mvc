@@ -46,9 +46,18 @@
 			<p class="text-center">
 				Digital Version of the Memorial Edition of Sri Shankaracharya's Works<br />
 				Published by the Vani Vilasa Press, Srirangam.<br /> 
+				<?php 
+					$currency = $viewHelper->displayCurrency();
+
+					if($currency == 'INR')
+						echo $currency . '  ₹' . $viewHelper->displayUnitPrice('INR');
+					else	
+						echo $currency . ' $' . $viewHelper->displayUnitPrice('USD');
+				?>
+				<br />
 				20 Volumes (1910-14)<br />
 			</p>
-			<p class="text-center mt-2"><button type="button" data-toggle="modal" class="btn btn-success disabled">Order online</button><br /><small>(Will be enabled shortly)</small></p>
+			<p class="text-center mt-2"><button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-success">Order online</button><br /><small>(Will be enabled shortly)</small></p>
 			<p class="text-center mt-2"><a class="btn btn-success" href="highlights">Product Overview</a></p>
 			<h4 class="mt-5 px-2">Commemorating</h4>
 			<h5 class="px-2 mb-4">Gurubhaktashikhamani (गुरुभक्तशिखामणिः) Sri T K Balasubrahmanyam</h5>
@@ -96,7 +105,18 @@
 								<label for="quantity"> Quantity<font style="color: red;">*</font> :</label> 	
 							</div>
 							<div class="col-sm-2">
-								<label>&#x20B9;<?=unitPrice?>  </label>
+								<label>
+									<?php 
+										$currency = $viewHelper->displayCurrency();
+										if($currency == 'INR') 
+											$currencySymbol = ' ₹';
+										else
+											$currencySymbol = ' $';
+										$unitPrice = $viewHelper->displayUnitPrice($currency);
+										echo '<span id="currency">' . $currency . '</span>' . $currencySymbol;											
+										echo '<span id="unitprice">'. $unitPrice .'</span>';										
+									?>	
+								</label>
 							</div>
 							<div class="col-sm-1">
 								<label> X </label>
@@ -105,7 +125,7 @@
 								<input required="required" type="number" min="1" value="1" class="form-control" id="quantity" name="quantity">	
 							</div>
 							<div class="col-sm-2">
-								<label>&#x20B9;1000</label>
+								<label><?php echo $currency . $currencySymbol; ?><span id="totalprice"></span></label>
 							</div>
 						</div>
 						<hr>

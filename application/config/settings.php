@@ -19,6 +19,8 @@ define('SERVICE_EMAIL_PASSWORD', 'sriranga@646203');
 define('SERVICE_NAME', 'Sriranga Team ' . ORG_NAME);
 define('CONTACT_EMAIL','');
 
+define('INR_PRICE', 1000);
+define('USD_PRICE', 50);
 define('unitPrice', 1000);
 define('keyId', '');
 define('keySecret', '');
