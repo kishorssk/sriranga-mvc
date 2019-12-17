@@ -1,6 +1,7 @@
 <?php
 	require 'application/libraries/Razorpay.php';
 	use Razorpay\Api\Api;
+	// error_reporting(0);
 
 class orders extends Controller {
 
@@ -16,23 +17,54 @@ class orders extends Controller {
 
 	public function flat() {
 		if(!isset($_POST['quantity'])){
-			header("Location: ".BASE_URL."news");
+			header("Location: ".BASE_URL."SG");
 			exit();
 		}
 		
 		$this->orderModel = $this->loadModel('ordersModel');
 		$api = new Api(keyId,keySecret);
-		$amount = $_POST['quantity'] * unitPrice * 100;
+		$userIp = $this->getUserIpAddr();
+		$userCountryCode = $this->getUserCountryCode($userIp);
+
+		if($userCountryCode == "IN"){
+			$unitPrice = INR_PRICE;
+			$currency = "INR";
+		}else{
+			$unitPrice = USD_PRICE;
+			$currency = "USD";
+		}
+
+		$amount = $_POST['quantity'] * $unitPrice * 100;
 		$orderData = [
 		    'amount'          => $amount, // rupees in paise
-		    'currency'        => 'INR',
+		    'currency'        => $currency,
 		    'payment_capture' => 1 // auto capture
 		];
-
-		$razorpayOrder = $api->order->create($orderData);
+		// print_r($orderData);die();
+		try{
+			$razorpayOrder = $api->order->create($orderData);	
+		}catch(Exception $e){
+			$data['msg'] = "Sorry we could not process your payment, Please try again after sometime.";
+			$path = 'error/prompt';
+			$this->view($path,$data);
+			exit();
+			// print_r($e);
+			// die();
+		}
+		
 		$razorpayOrderId = $razorpayOrder['id'];
 		$_SESSION['razorpay_order_id'] = $razorpayOrderId;
-		$orderId = $this->orderModel->createOrder($orderData);
+
+		try{
+			$orderId = $this->orderModel->createOrder($orderData);
+		}catch(Exception $e){
+			$data['msg'] = "Sorry we could not process your payment, Please try again after sometime.";
+			$path = 'error/prompt';
+			$this->view($path,$data);
+			exit();
+		}
+		
+
 		$_SESSION['orderId'] = $orderId;
 
 		$data = [
@@ -47,6 +79,7 @@ class orders extends Controller {
 				    "contact"           => $_POST['mobile'],
 				    "quantity"			=> $_POST['quantity'],
 				    "orderId"			=> $orderId,
+				    "currency"			=> $currency,
 				    ],
 		    "notes"             => [
 				    "address1"           => $_POST['address1'],
@@ -54,6 +87,7 @@ class orders extends Controller {
 				    "city"				 => $_POST['city'],
 				    "pincode"			 => $_POST['pincode'],
 				    "state"				 => $_POST['state'],
+				    "country"			 => $_POST['country'],
 				    ],
 		    "theme"             => [
 				    "color"             => "#F37254"
@@ -64,6 +98,29 @@ class orders extends Controller {
 		$data = json_encode($data);
 		$path = 'flat/payment';
 		$this->view($path,$data);
+	}
+
+	public function getUserIpAddr(){
+	    if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+	        //ip from share internet
+	        $ip = $_SERVER['HTTP_CLIENT_IP'];
+	    }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+	        //ip pass from proxy
+	        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+	    }else{
+	        $ip = $_SERVER['REMOTE_ADDR'];
+	    }
+	    return $ip;
+	}
+
+	public function getUserCountryCode($ip){
+		if($ip == null){
+			return "IN";
+		}
+
+		$xml = simplexml_load_file("http://www.geoplugin.net/xml.gp?ip=" . $ip);
+		if(!$xml) return False;
+		return $xml->geoplugin_countryCode;
 	}
 
 	// public function testmail(){

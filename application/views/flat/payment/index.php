@@ -41,6 +41,15 @@
                 </div>
                 <div class="row" style="margin-bottom: 5px;">
                     <div class="col-sm-4">
+                        <label for="quantity"> Amount :</label>     
+                    </div>
+                    <div class="col-sm-8" style="text-align: left;">
+
+                        <label><?php echo ($details['prefill']['currency'] == 'INR') ? '₹' :'$'; echo $details['amount']/100; ?></label>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 5px;">
+                    <div class="col-sm-4">
                         <label for="address1"> Address : </label>  
                     </div>
                     <div class="col-sm-8" style="text-align: left;">
@@ -52,6 +61,8 @@
                         <label><?php echo $details['notes']['pincode']; ?></label>
                         <br>
                         <label><?php echo $details['notes']['state']; ?></label>
+                        <br>
+                        <label><?php echo $details['notes']['country']; ?></label>
                     </div>
                 </div>
             </div>

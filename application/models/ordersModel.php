@@ -35,13 +35,14 @@ class ordersModel extends Model {
 		$city = mysqli_real_escape_string($dbConnection, $_POST['city']);
 		$pincode = mysqli_real_escape_string($dbConnection, $_POST['pincode']);
 		$state = mysqli_real_escape_string($dbConnection, $_POST['state']);
-		$email = mysqli_real_escape_string($dbConnection, $_POST['email']);
+		$country = mysqli_real_escape_string($dbConnection, $_POST['country']);
+		$currency = $orderData['currency'];
 
-		$price = $quantity * unitPrice;
+		$price = $orderData['amount'];
 		$razorpay_payment_id = $_SESSION['razorpay_order_id'];
 		$order_time = date('Y-m-d H:i:s', time());
-		$sql = "INSERT INTO orders (username,user_mobile,user_email,order_quantity,order_price,razorpay_order_id,order_created_at,user_address_1,user_address_2,user_city,user_state,user_pincode)";
-		$sql .= " VALUES('$name', '$mobile', '$email','$quantity', '$price', '$razorpay_payment_id', '$order_time' , '$address1', '$address2', '$city', '$state', '$pincode')  ";
+		$sql = "INSERT INTO orders (username,user_mobile,user_email,order_quantity,order_price,razorpay_order_id,order_created_at,user_address_1,user_address_2,user_city,user_state,user_pincode,user_country,currency)";
+		$sql .= " VALUES('$name', '$mobile', '$email','$quantity', '$price', '$razorpay_payment_id', '$order_time' , '$address1', '$address2', '$city', '$state', '$pincode','$country','$currency')  ";
 
 		$result = $dbConnection->query($sql);
 		$orderId = $dbConnection->insert_id;

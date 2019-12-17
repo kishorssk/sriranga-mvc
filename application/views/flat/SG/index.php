@@ -113,8 +113,7 @@
 										else
 											$currencySymbol = ' $';
 										$unitPrice = $viewHelper->displayUnitPrice($currency);
-										echo '<span id="currency">' . $currency . '</span>' . $currencySymbol;											
-										echo '<span id="unitprice">'. $unitPrice .'</span>';										
+										echo $currencySymbol . '<span id="unitprice">'. $unitPrice .'</span>';
 									?>	
 								</label>
 							</div>
@@ -125,7 +124,7 @@
 								<input required="required" type="number" min="1" value="1" class="form-control" id="quantity" name="quantity">	
 							</div>
 							<div class="col-sm-2">
-								<label><?php echo $currency . $currencySymbol; ?><span id="totalprice"></span></label>
+								<label><?php echo $currencySymbol; ?><span id="totalprice"><?php echo $unitPrice; ?></span></label>
 							</div>
 						</div>
 						<hr>
@@ -167,6 +166,14 @@
 							</div>
 							<div class="col-sm-8">
 								<input required="required" type="text" class="form-control" id="state" name="state" placeholder="Karnataka">	
+							</div>
+						</div>
+						<div class="row" style="margin-bottom: 10px;">
+							<div class="col-sm-4">
+								<label for="country"> Country <font style="color: red;">*</font> : </label> 	
+							</div>
+							<div class="col-sm-8">
+								<input required="required" type="text" class="form-control" id="country" name="country" placeholder="India">	
 							</div>
 						</div>
 					</div>
