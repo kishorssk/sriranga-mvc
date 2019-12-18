@@ -24,7 +24,14 @@ class orders extends Controller {
 		$this->orderModel = $this->loadModel('ordersModel');
 		$api = new Api(keyId,keySecret);
 		$userIp = $this->getUserIpAddr();
+
+		// To be removed in production
+		//$userIp = '117.247.182.254'; // India
+		//$userIp = '72.229.28.185'; // USA
+		//$ip = '116.58.205.53'; // Bangladesh
+
 		$userCountryCode = $this->getUserCountryCode($userIp);
+
 
 		if($userCountryCode == "IN"){
 			$unitPrice = INR_PRICE;
