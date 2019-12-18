@@ -35,7 +35,7 @@
         }
 
         $this->orderModel = $this->loadModel('ordersModel');
-       
+        $orderDetails = $this->orderModel->getOrderDetails($_SESSION['orderId']);
 
         if ($success === true){
             
@@ -66,7 +66,7 @@
             $emailBody .= '<br>'.SERVICE_NAME;
         }
 
-        $orderDetails = $this->orderModel->getOrderDetails($_SESSION['orderId']);
+        
         if($orderDetails != null){
             $toEmail = $orderDetails['user_email'];
             $toName = $orderDetails['username'];
