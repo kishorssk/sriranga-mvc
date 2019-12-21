@@ -57,7 +57,7 @@
 				<br />
 				20 Volumes (1910-14)<br />
 			</p>
-			<p class="text-center mt-2"><button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-success">Order online</button><br /><small>(Will be enabled shortly)</small></p>
+			<p class="text-center mt-2"><button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-success">Order online</button><br /><small>(Shipping will start from 2nd week of January 2020)</small><br /><small><span class="text-danger">Offer:</span> <strong class="text-danger">Postage is free for first 500 orders</strong></small></p>
 			<p class="text-center mt-2"><a class="btn btn-success" href="highlights" target="_blank">Product Overview</a></p>
 			<h4 class="mt-5 px-2">Commemorating</h4>
 			<h5 class="px-2 mb-4">Gurubhaktashikhamani (गुरुभक्तशिखामणिः) Sri T K Balasubrahmanyam</h5>
