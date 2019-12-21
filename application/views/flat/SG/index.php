@@ -157,7 +157,7 @@
 								<label for="pincode"> Pin code<font style="color: red;">*</font> : </label> 	
 							</div>
 							<div class="col-sm-8">
-								<input required="required" type="number" class="form-control" id="pincode" name="pincode" placeholder="570022">	
+								<input required="required" type="text" class="form-control" id="pincode" name="pincode" placeholder="570022">	
 							</div>
 						</div>
 						<div class="row" style="margin-bottom: 10px;">
