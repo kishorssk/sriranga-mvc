@@ -10,6 +10,10 @@
     }
 
     public function flat() {
+        if(!isset($_POST['razorpay_payment_id']) || !isset($_SESSION['razorpay_order_id'])){
+            header("Location: ".BASE_URL."SG");
+            exit();
+        }
         $success = true;
 
         $error = "Payment Failed";
@@ -46,11 +50,13 @@
             $subject = 'Shankara Granthavali USB Stick : Order Conformation';
             $emailBody = 'Thanks for ordering Shankara Granthavali USB Stick. Your Order ID is <b style="color: red;">'. $_SESSION['orderId'] .'</b>';
             $emailBody .= '<br> Order Deatils are as follows :';
+            $emailBody .= '<br> Name :'. $orderDetails['username'];
+            $emailBody .= '<br> Razorpay Order ID :'. $_SESSION['razorpay_order_id'];
             $emailBody .= '<br> Mobile No:'. $orderDetails['user_mobile'];
             $emailBody .= '<br> Quantity:'. $orderDetails['order_quantity'];
             $emailBody .= '<br> Address :'. $orderDetails['user_address_1'] . $orderDetails['user_address_2'] ;
             $emailBody .= ', ' . $orderDetails['user_city'] . ' - ' . $orderDetails['user_pincode'];
-            $emailBody .= ','. $orderDetails['user_state'];
+            $emailBody .= ','. $orderDetails['user_state']. ',' . $orderDetails['user_country'];
             $emailBody .= '<br><br> If you have any quries Please send a mail to '. CONTACT_EMAIL;
             $emailBody .= '<br><br> Thanks and Regards';
             $emailBody .= '<br>'.SERVICE_NAME;
