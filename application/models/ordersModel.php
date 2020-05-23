@@ -38,7 +38,11 @@ class ordersModel extends Model {
 		$country = mysqli_real_escape_string($dbConnection, $_POST['country']);
 		$currency = $orderData['currency'];
 
-		$price = $orderData['amount'];
+		if($currency === "INR")
+			$price = $orderData['amount'] / 100;
+		else
+			$price = $orderData['amount'];
+			
 		$razorpay_payment_id = $_SESSION['razorpay_order_id'];
 		$order_time = date('Y-m-d H:i:s', time());
 		$sql = "INSERT INTO orders (username,user_mobile,user_email,order_quantity,order_price,razorpay_order_id,order_created_at,user_address_1,user_address_2,user_city,user_state,user_pincode,user_country,currency)";
