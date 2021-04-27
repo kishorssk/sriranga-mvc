@@ -49,11 +49,11 @@ class japa extends Controller {
 		}
 
 		if($result == null){
-			echo json_encode(array('result' => 1, 'response_data' => "Error, User could not be ". $responseMsg));
+			echo json_encode(array('result' => 1, 'data' => "Error, User could not be ". $responseMsg));
 			return;
 		}
 		
-		echo json_encode(array('result' => 0, 'response_data' => "User ". $responseMsg ." Successfully"));
+		echo json_encode(array('result' => 0, 'data' => "User ". $responseMsg ." Successfully"));
 		return;
 	}
 
@@ -86,7 +86,7 @@ class japa extends Controller {
 			exit();
 		}
 
-		echo json_encode(array('result' => 0, 'response_data' => "Japa count updated Successfully"));
+		echo json_encode(array('result' => 0, 'data' => "Japa count updated Successfully"));
 		return;
 	}
 

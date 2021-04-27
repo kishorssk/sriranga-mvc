@@ -101,7 +101,7 @@ class userModel extends Model {
         $uat = date('Y-m-d H:i:s', time());
 
 		$sql = "update users set user_name = '".$userName ."', user_device_id ='".$userDeviceId ."', user_member_count = '". $userMemberCount ."'".
-        ", user_address = '".$userAddress."', user_taluk = '".$userTaluk."', user_district = '".$userDistrict."', user_pincode = '".$userPincode."', user_state = '".$userState."' uat ='". $uat ."' where user_mobile = '".$userMobile."'";
+        ", user_address = '".$userAddress."', user_taluk = '".$userTaluk."', user_district = '".$userDistrict."', user_pincode = '".$userPincode."', user_state = '".$userState."', uat ='". $uat ."' where user_mobile = '".$userMobile."'";
 
 		$result = $dbConnection->query($sql);
 		$this->closeDbConnection($dbConnection);
