@@ -13,8 +13,8 @@ class japa extends Controller {
 	}
 
 	public function flat() {
-		sleep(5);
-		echo json_encode(array('result' => 0, 'response_data' => "Test Ok"));
+		$path = 'flat/japa';
+		$this->view($path);
 		return;
 	}
 
@@ -92,6 +92,173 @@ class japa extends Controller {
 
 	private function validate_mobile($mobile){
 		return preg_match('/^[0-9]{10}+$/', $mobile);
+	}
+
+	public function userrecords(){
+		// CSV download
+		$excelFile = false;
+		if(isset($_GET['excel']) && $_GET['excel'] != null){
+			$excelFile = $_GET['excel'];
+		}
+		
+		$this->userModel = $this->loadModel('userModel');
+		$result = $this->userModel->getUserRecords();
+		
+		if($excelFile){
+			$header = array_keys($result[0]); 
+			$this->exportCSV("export.csv", $header, $result, ",");
+		}else{
+			echo json_encode(array('result' => 0, 'data' => $result), JSON_UNESCAPED_UNICODE);
+		}
+		return;
+	}
+
+	public function japarecords(){
+		$conditionArray = array();
+		// User Mobile
+		if(isset($_GET['userMobile']) && $_GET['userMobile'] != null){
+			$conditionArray['japa_count.user_mobile'] = $_GET['userMobile'];
+		}
+		// From Time
+		if(isset($_GET['fromTime']) && $_GET['fromTime'] != null){
+			$conditionArray['fromTime'] = $_GET['fromTime'];
+		}
+		// To time
+		if(isset($_GET['toTime']) && $_GET['toTime'] != null){
+			$conditionArray['toTime'] = $_GET['toTime'];
+		}
+
+		// CSV download
+		$excelFile = false;
+		if(isset($_GET['excel']) && $_GET['excel'] != null){
+			$excelFile = $_GET['excel'];
+		}
+		
+		$this->userModel = $this->loadModel('userModel');
+		$result = $this->userModel->getJapaRecords($conditionArray);
+		
+		if($excelFile){
+			$header = array_keys($result[0]); 
+			$this->exportCSV("export.csv", $header, $result, ",");
+		}else{
+			echo json_encode(array('result' => 0, 'data' => $result), JSON_UNESCAPED_UNICODE);
+		}
+		return;
+	}
+
+	public function totalcount($userMobile = null){
+		if(isset($_GET['userMobile']) ){
+			$userMobile = $_GET['userMobile'];
+		}
+
+		$this->userModel = $this->loadModel('userModel');
+		$result = $this->userModel->getTotalJapaCount($userMobile);
+		if($result == null){
+			echo json_encode(array('result' => 1, 'data' => "Could not get Total Count. Please try again"));
+			return;
+		}
+		
+		echo json_encode(array('result' => 0, 'data' => $result));
+		return;
+	}
+
+	public function count(){
+		$conditionArray = array();
+		// User Mobile
+		if(isset($_GET['userMobile']) && $_GET['userMobile'] != null){
+			$conditionArray['japa_count.user_mobile'] = $_GET['userMobile'];
+		}
+		// From Time
+		if(isset($_GET['fromTime']) && $_GET['fromTime'] != null){
+			$conditionArray['fromTime'] = $_GET['fromTime'];
+		}
+		// To time
+		if(isset($_GET['toTime']) && $_GET['toTime'] != null){
+			$conditionArray['toTime'] = $_GET['toTime'];
+		}
+		// Taluk
+		if(isset($_GET['userTaluk']) && $_GET['userTaluk'] != null){
+			$conditionArray['user_taluk'] = $_GET['userTaluk'];
+		}
+		// District
+		if(isset($_GET['userDistrict']) && $_GET['userDistrict'] != null){
+			$conditionArray['user_district'] = $_GET['userDistrict'];
+		}
+		// Pincode
+		if(isset($_GET['userPincode']) && $_GET['userPincode'] != null){
+			$conditionArray['user_pincode'] = $_GET['userPincode'];
+		}
+		// State
+		if(isset($_GET['userState']) && $_GET['userState'] != null){
+			$conditionArray['user_state'] = $_GET['userState'];
+		}
+
+		// Group By
+		$groupBy = array();
+		if(isset($_GET['group']) && $_GET['group'] != null){
+			$groupString = $_GET['group'];
+			$groupBy = explode("-", $groupString);
+		}
+
+		// CSV download
+		$excelFile = false;
+		if(isset($_GET['excel']) && $_GET['excel'] != null){
+			$excelFile = $_GET['excel'];
+		}
+
+		if(count($groupBy) > 0){
+			foreach($groupBy as $key => $value){
+				switch ($value) {
+					case "Date":
+						break;
+					case "userMobile":
+						$groupBy[$key] = "user_mobile";
+						break;
+					case "userTaluk":
+						$groupBy[$key] = "user_taluk";
+						break;
+					case "userDistrict":
+						$groupBy[$key] = "user_district";
+						break;
+					case "userPincode":
+						$groupBy[$key] = "user_pincode";
+						break;
+					case "userState":
+						$groupBy[$key] = "user_state";
+						break;
+					default:
+						break;
+				}
+			}
+		}
+
+		$this->userModel = $this->loadModel('userModel');
+		$result = $this->userModel->getjapacount($conditionArray,$groupBy);
+
+		if($result == null){
+			echo json_encode(array('result' => 1, 'data' => "Error, Count data could not be retrived "));
+			return;
+		}
+		
+		if($excelFile){
+			$header = array_keys($result[0]); 
+			$this->exportCSV("export.csv", $header, $result, ",");
+		}else{
+			echo json_encode(array('result' => 0, 'data' => $result), JSON_UNESCAPED_UNICODE);
+		}
+		return;
+	}
+
+	private function exportCSV($filename = "export.csv", $header, $data,  $delimiter=","){
+		$f = fopen('php://output', 'w');
+		fputcsv($f, $header, $delimiter);
+		foreach ($data as $line) { 
+			fputcsv($f, $line, $delimiter); 
+		}
+		header('Content-Type: application/csv; charset=UTF-8');
+		header('Content-Disposition: attachment; filename="'.$filename.'";');
+		fpassthru($f);
+		return;
 	}
 }
 

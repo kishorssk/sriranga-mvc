@@ -135,5 +135,183 @@ class userModel extends Model {
 		return $countId;
 	}
 
+	public function getUserRecords(){
+		$dbConnection = $this->connect();
+		if($dbConnection == null){
+			return null;
+		}
+
+		$sql = "select user_id as `User ID`, user_mobile as Mobile, user_name as Name, user_member_count as Members, user_address as Address, user_taluk as Taluk, user_district as District, user_pincode as Pincode, user_state as State from users";
+		$result = $dbConnection->query($sql);
+
+		if($result == null || $result->num_rows <= 0){
+            $result = null;
+        }else{
+			$data = array();
+			while($row = mysqli_fetch_assoc($result)){
+				array_push($data,$row);
+			}
+			$result = $data;
+		}
+		$this->closeDbConnection($dbConnection);
+		return $result;
+	}
+
+	public function getTotalJapaCount($userMobile){
+		$dbConnection = $this->connect();
+		if($dbConnection == null){
+			return null;
+		}
+
+		$sql = "SELECT SUM(japa_count) as Total FROM japa_count";
+		if($userMobile != null){
+			$sql .= " WHERE user_mobile = '".$userMobile ."'" ;
+		}
+
+		$result = $dbConnection->query($sql);
+		$this->closeDbConnection($dbConnection);
+
+		if ($result->num_rows == 0) {
+		    return null;
+		}
+		return $result->fetch_assoc();
+	}
+
+	public function getjapacount($conditionArray,$groupBy){
+		$dbConnection = $this->connect();
+		if($dbConnection == null){
+			return null;
+		}
+
+		$groupString = null;
+		$sql = "SELECT SUM(japa_count) as Count";
+		if(count($groupBy) > 0){
+			foreach($groupBy as $group){
+				if($group == "date"){
+					$sql .= ", DATE(japa_date) as Date";
+					if($groupString == null){
+						$groupString .= " GROUP BY ". " DATE(japa_date) ";
+					}else{
+						$groupString .= ", ".$group;
+					}
+				}else if($group == "user_mobile"){
+					$sql .= ", japa_count.user_mobile as Mobile";
+					if($groupString == null){
+						$groupString .= " GROUP BY ". " japa_count.user_mobile ";
+					}else{
+						$groupString .= ", japa_count.user_mobile ";
+					}
+				}else {
+					$sql .= ", ". $group;
+					if($groupString == null){
+						$groupString .= " GROUP BY ". $group;
+					}else{
+						$groupString .= ", ".$group;
+					}
+				}
+			}
+		}
+		
+		$sql .= " FROM japa_count JOIN users on japa_count.user_mobile = users.user_mobile ";
+
+		$whereCond = null;
+		if(count($conditionArray) > 0){
+			foreach($conditionArray as $key => $condition){
+				if($key == "fromTime"){
+					if($whereCond == null){
+						$whereCond = " WHERE japa_date >= '" . $condition . "'";
+					}else {
+						$whereCond .= " AND japa_date >='" . $condition . "'";
+					}
+				}else if ($key == "toTime"){
+					if($whereCond == null){
+						$whereCond = " WHERE japa_date <= '" . $condition . "'";
+					}else {
+						$whereCond .= " AND  japa_date <= '" . $condition . "'";
+					}
+				}else {
+					if($whereCond == null){
+						$whereCond = " WHERE ". $key . " = '" . $condition . "'";
+					}else {
+						$whereCond .= " AND ". $key . " = '" . $condition . "'";
+					}
+				}
+			}
+		}
+
+		if($whereCond != null){
+			$sql .= $whereCond;
+		}
+
+		if($groupString != null){
+			$sql .= $groupString;
+		}
+
+		$result = $dbConnection->query($sql);
+		if($result == null || $result->num_rows <= 0){
+            $result = null;
+        }else{
+			$data = array();
+			while($row = mysqli_fetch_assoc($result)){
+				array_push($data,$row);
+			}
+			$result = $data;
+		}
+		$this->closeDbConnection($dbConnection);
+		return $result;		
+	}
+
+	public function getJapaRecords($conditionArray){
+		$dbConnection = $this->connect();
+		if($dbConnection == null){
+			return null;
+		}
+
+		$sql = "SELECT user_mobile as Mobile, japa_date as Date, japa_count as Count";
+		$sql .= " FROM japa_count ";
+
+		$whereCond = null;
+		if(count($conditionArray) > 0){
+			foreach($conditionArray as $key => $condition){
+				if($key == "fromTime"){
+					if($whereCond == null){
+						$whereCond = " WHERE japa_date >= '" . $condition . "'";
+					}else {
+						$whereCond .= " AND japa_date >='" . $condition . "'";
+					}
+				}else if ($key == "toTime"){
+					if($whereCond == null){
+						$whereCond = " WHERE japa_date <= '" . $condition . "'";
+					}else {
+						$whereCond .= " AND  japa_date <= '" . $condition . "'";
+					}
+				}else {
+					if($whereCond == null){
+						$whereCond = " WHERE ". $key . " = '" . $condition . "'";
+					}else {
+						$whereCond .= " AND ". $key . " = '" . $condition . "'";
+					}
+				}
+			}
+		}
+
+		if($whereCond != null){
+			$sql .= $whereCond;
+		}
+
+		$result = $dbConnection->query($sql);
+		if($result == null || $result->num_rows <= 0){
+            $result = null;
+        }else{
+			$data = array();
+			while($row = mysqli_fetch_assoc($result)){
+				array_push($data,$row);
+			}
+			$result = $data;
+		}
+		$this->closeDbConnection($dbConnection);
+		return $result;
+	}
+
 }
 ?>
