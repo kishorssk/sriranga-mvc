@@ -105,6 +105,7 @@ class japa extends Controller {
 		$result = $this->userModel->getUserRecords();
 		
 		if($excelFile){
+			header('Content-Type: application/csv; charset=UTF-8');
 			$header = array_keys($result[0]); 
 			$this->exportCSV("export.csv", $header, $result, ",");
 		}else{
@@ -138,6 +139,7 @@ class japa extends Controller {
 		$result = $this->userModel->getJapaRecords($conditionArray);
 		
 		if($excelFile){
+			header('Content-Type: application/csv; charset=UTF-8');
 			$header = array_keys($result[0]); 
 			$this->exportCSV("export.csv", $header, $result, ",");
 		}else{
@@ -241,6 +243,7 @@ class japa extends Controller {
 		}
 		
 		if($excelFile){
+			header('Content-Type: application/csv; charset=UTF-8');
 			$header = array_keys($result[0]); 
 			$this->exportCSV("export.csv", $header, $result, ",");
 		}else{
