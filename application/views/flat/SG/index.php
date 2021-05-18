@@ -58,7 +58,7 @@
 				20 Volumes (1910-14)<br />
 			</p>
 			<p class="text-center mt-2"><button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-success">Order online</button><br /></p>
-			<p class="my-4"><strong>If you have difficulty in completing the pay online  process, Please send  the  amount to the following account and write an email to sriranga.yoga@gmail.com with payment transaction details and  your complete postal address to send the courier:</strong></p>
+			<p class="my-4"><strong>If you have difficulty in completing the pay online  process, Please send  the  amount to the following account and write an email to <a class="text-primary" href="mailto:sriranga.yoga@gmail.com">sriranga.yoga@gmail.com</a> with payment transaction details and  your complete postal address to send the courier:</strong></p>
 			<p>
 				<strong>Account Name :</strong> Sriranga Digital Software Technologies Private Limited.<br />
 				<strong>Account Number :</strong> 3950002100001647<br />
