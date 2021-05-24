@@ -19,6 +19,9 @@ class japa extends Controller {
 	}
 
 	public function register(){
+		echo json_encode(array('result' => 1, 'data' => "Japa Yajna Event is completed, \nUser registration is closed."));
+		exit();
+		
 		$jsonData = file_get_contents('php://input');
 		$data = json_decode($jsonData,true);
 		if(!isset($data['userMobile']) && !isset($data['userDeviceId'])){
@@ -58,6 +61,9 @@ class japa extends Controller {
 	}
 
 	public function updateJapaCount(){
+		echo json_encode(array('result' => 1, 'data' => "Thank you for participating in Japa Yajna, \nJapa Count update has been closed."));
+		exit();
+		
 		$jsonData = file_get_contents('php://input');
 		$data = json_decode($jsonData,true);
 		if(!isset($data['userMobile']) && !isset($data['japaCount']) && !isset($data['japaDateTime'])){
