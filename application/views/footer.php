@@ -1,7 +1,7 @@
     <div class="container footer"><!-- container -->
         <div class="row justify-content-center"><!-- row -->
             <div class="col-md-12 text-center">
-                <p><small><span class="eng">©</span> 2018 Sriranga Digital Software Technologies, Srirangapatna, Mandya, INDIA All Rights Reserved</small> | <a href="<?=BASE_URL?>Privacy_Policy"><small>Privacy Policy</small></a></p>
+                <p><small><span class="eng">©</span> 2022 Sriranga Digital Software Technologies, Srirangapatna, Mandya, INDIA All Rights Reserved</small> | <a href="<?=BASE_URL?>Privacy_Policy"><small>Privacy Policy</small></a></p>
             </div>
         </div>
     </div>
