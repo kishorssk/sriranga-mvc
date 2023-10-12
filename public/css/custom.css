@@ -20,7 +20,7 @@ body{
     margin-top:35px;
 }
 
-.main-stage,p{
+.main-stage, p, ul li{
     color: #5a5a5a;
 }
 

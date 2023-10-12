@@ -1,35 +1,58 @@
 <div class="container second-stage">
 	<div class="row">
 		<div class="col-md-12">
-			<h3 class="mb-2">Privacy Policy</h3>
-				<p>Sriranga Digital Software Technologies built the Bhashya Shankara app as a Commercial app. This SERVICE is provided by Sriranga Digital Software Technologies  and is intended for use as is. </p>
-				<p>This page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service. </p>
-				<p>If you choose to use our Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that we collect is used for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy. </p>
-				<p>The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which are accessible at Bhashya Shankara unless otherwise defined in this Privacy Policy. </p>
-				<h5 class="mt-4">Information Collection and Use</h5>
-				<p>For a better experience, while using our Service, we may require you to provide us with certain personally identifiable information, including but not limited to None. The information that we request will be retained by us and used as described in this privacy policy. </p>
-				<h5 class="mt-4">Log Data</h5>
-				<p> We want to inform you that whenever you use our Service, in a case of an error in the app we collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics. </p>
-				<h5 class="mt-4">Cookies</h5>
-				<p> Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory. </p>
-				<p> This Service does not use these “cookies” explicitly. However, the app may use third-party code and libraries that use “cookies” to collect information and improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service. </p>
-				<h5 class="mt-4">Service Providers</h5>
-				<p> We may employ third-party companies and individuals due to the following reasons: </p>
-				<ul><li>To facilitate our Service;</li> <li>To provide the Service on our behalf;</li> <li>To perform Service-related services; or</li> <li>To assist us in analyzing how our Service is used.</li></ul> <p> We want to inform users of this Service that these third parties have access to their Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose. </p>
-				<h5 class="mt-4">Security</h5>
-				<p> We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security. </p>
-				<h5 class="mt-4">Links to Other Sites</h5>
-				<p> This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by us. Therefore, we strongly advise you to review the Privacy Policy of these websites. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services. </p>
-				<h5 class="mt-4">Children’s Privacy</h5>
-				<div>
-					<p> We do not knowingly collect personally identifiable information from children. We encourage all children to never submit any personally identifiable information through the Application and/or Services. We encourage parents and legal guardians to monitor their children's Internet usage and to help enforce this Policy by instructing their children never to provide personally identifiable information through the Application and/or Services without their permission. If you have reason to believe that a child has provided personally identifiable information to us through the Application and/or Services, please contact us. You must also be at least 16 years of age to consent to the processing of your personally identifiable information in your country (in some countries we may allow your parent or guardian to do so on your behalf). </p>
-				</div> 
-				<h5 class="mt-4">Changes to This Privacy Policy</h5>
-				<p> We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. </p>
-				<p>This policy is effective as of 2022-12-21</p>
-				<h5 class="mt-4">Contact Us</h5>
-				<p> If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at sriranga.yoga@gmail.com. </p>
-				<p>This privacy policy page was created at <a href="https://privacypolicytemplate.net" target="_blank" rel="noopener noreferrer">privacypolicytemplate.net </a>and modified/generated by <a href="https://app-privacy-policy-generator.nisrulz.com/" target="_blank" rel="noopener noreferrer">App Privacy Policy Generator</a></p>
+			<h3 class="mb-2">Privacy Statement</h3>
+
+			<h5 class="mt-4">Section 1 - What Do We Do With Your Information?</h5> 
+			<p>When you purchase something from our store, as part of the buying and selling process, we  collect the personal information you give us such as your name, address and email address.</p> 
+			<p>When you browse our store, we also automatically receive your computer’s internet protocol (IP)  address in order to provide us with information that helps us learn about your browser and  operating system.</p> 
+			<p>Email marketing (if applicable): With your permission, we may send you emails about our store,  new products and other updates.</p> 
+
+			<h5 class="mt-4">Section 2 - Consent</h5> 
+			<p>How do you get my consent?</p> 
+			<p>When you provide us with personal information to complete a transaction, verify your credit  card, place an order, arrange for a delivery or return a purchase, we imply that you consent to  our collecting it and using it for that specific reason only.</p> 
+			<p>If we ask for your personal information for a secondary reason, like marketing, we will either ask  you directly for your expressed consent, or provide you with an opportunity to say no.</p> 
+			<p>How do I withdraw my consent?</p> 
+			<p>If after you opt-in, you change your mind, you may withdraw your consent for us to contact you,  for the continued collection, use or disclosure of your information, at anytime, by contacting us  at <a href="mailto:shiva@srirangadigital.com">shiva@srirangadigtial.com</a> or mailing us at: <strong>Sriranga Digital Software Technologies, 1st Cross, Ranganatha Nagara, Srirangapatna, Mandya District, Karnataka, PIN 571 438.</strong></p>
+
+			<h5 class="mt-4">Section 3 - Disclosure</h5> 
+			<p>We may disclose your personal information if we are required by law to do so or if you violate  our Terms of Service.</p> 
+
+			<h5 class="mt-4">Section 4 - Payment</h5> 
+			<p>We use Razorpay for processing payments. We/Razorpay do not store your card data on their  servers. The data is encrypted through the Payment Card Industry Data Security Standard (PCI DSS) when processing payment. Your purchase transaction data is only used as long as is  necessary to complete your purchase transaction. After that is complete, your purchase  transaction information is not saved.</p> 
+			<p>Our payment gateway adheres to the standards set by PCI-DSS as managed by the PCI  Security Standards Council, which is a joint effort of brands like Visa, MasterCard, American  Express and Discover.</p> 
+			<p>PCI-DSS requirements help ensure the secure handling of credit card information by our store  and its service providers.</p> 
+			<p>For more insight, you may also want to read terms and conditions of razorpay on  <a href="https://razorpay.com">https://razorpay.com</a></p> 
+
+			<h5 class="mt-4">Section 5 - Third-party Services</h5> 
+			<p>In general, the third-party providers used by us will only collect, use and disclose your  information to the extent necessary to allow them to perform the services they provide to us.</p> 
+			<p>However, certain third-party service providers, such as payment gateways and other payment  transaction processors, have their own privacy policies in respect to the information we are  required to provide to them for your purchase-related transactions.</p> 
+			<p>For these providers, we recommend that you read their privacy policies so you can understand  the manner in which your personal information will be handled by these providers.</p>
+			<p>In particular, remember that certain providers may be located in or have facilities that are  located in a different jurisdiction than either you or us. So if you elect to proceed with a transaction  that involves the services of a third-party service provider, then your information may become  subject to the laws of the jurisdiction(s) in which that service provider or its facilities are located.</p> 
+			<p>Once you leave our store’s website or are redirected to a third-party website or application, you  are no longer governed by this Privacy Policy or our website’s Terms of Service.</p>  
+
+			<h5 class="mt-4">Links</h5> 
+			<p>When you click on links on our store, they may direct you away from our site. We are not  responsible for the privacy practices of other sites and encourage you to read their privacy  statements.</p> 
+
+			<h5 class="mt-4">Section 6 - Security</h5> 
+			<p>To protect your personal information, we take reasonable precautions and follow industry best  practices to make sure it is not inappropriately lost, misused, accessed, disclosed, altered or  destroyed.</p> 
+
+			<h5 class="mt-4">Section 7 - Cookies</h5> 
+			<p>We use cookies to maintain session of your user. It is not used to personally identify you on  other websites.</p> 
+
+			<h5 class="mt-4">Section 8 - Age Of Consent</h5> 	
+			<p>By using this site, you represent that you are at least the age of majority in your state or  province of residence, or that you are the age of majority in your state or province of residence  and you have given us your consent to allow any of your minor dependents to use this site.</p> 
+
+			<h5 class="mt-4">Section 9 - Changes To This Privacy Policy</h5>
+			<p>We reserve the right to modify this privacy policy at any time, so please review it frequently.  Changes and clarifications will take effect immediately upon their posting on the website. If we  make material changes to this policy, we will notify you here that it has been updated, so that  you are aware of what information we collect, how we use it, and under what circumstances, if  any, we use and/or disclose it.</p> 
+			<p>If our store is acquired or merged with another company, your information may be transferred to  the new owners so that we may continue to sell products to you.</p> 
+
+			<h5 class="mt-4">Questions And Contact Information</h5> 
+			<p>If you would like to: access, correct, amend or delete any personal information we have about  you, register a complaint, or simply want more information contact our Privacy Compliance  Officer at <a href="mailto:shiva@srirangadigital.com">shiva@srirangadigtial.com</a> or by mail at Sriranga Digital Software Technologies, 1st Cross, Ranganatha Nagara, Srirangapatna, Mandya District, Karnataka, PIN 571 438.</p>
+			<p>Privacy Compliance Officer: Sriranga Digital Software Technologies, 1st Cross, Ranganatha Nagara, Srirangapatna, Mandya District, Karnataka, PIN 571 438.</p> 
+
+
+
 		</div>
 	</div>
 </div>
