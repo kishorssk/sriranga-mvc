@@ -104,10 +104,12 @@
       <a href="https://kymyogavaisharadi.org/" target="_blank"><img src="<?=IMAGE_URL?>mainc/image15.png" class="clientimg img-fluid" alt=""></a>
       <br/><span class="text-center">Krishnamacharya Yoga Mandiram, Chennai</span>
     </div>
+<!--
     <div class="col-md-3 client">
       <a href="javascript:void();"><img src="<?=IMAGE_URL?>mainc/image16.jpg" class="clientimg img-fluid" alt=""></a>
       <br/><span class="text-center">Indic Academy</span>
     </div>
+-->
     <div class="col-md-3 client">
       <a href="http://gipa-bng.org/" target="_blank"><img src="<?=IMAGE_URL?>mainc/image17.png" class="clientimg img-fluid" alt=""></a>
       <br/><span class="text-center">Gokhale Institute of Public Affairs</span>
